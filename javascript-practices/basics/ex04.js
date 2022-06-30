@@ -10,6 +10,8 @@
         - Block Scope을 적용할 수 있는 키워드를 지원(const, let)
         - const: 상수
         - let: 변수
+    4. 결론
+        - const / let 만 사용하고 둘 중을 하나를 *반드시* 붙히자!!!(안붙히면 hoisting)
 */
 var i = 10;
 var f = function() {
