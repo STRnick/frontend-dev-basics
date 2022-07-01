@@ -1,5 +1,5 @@
 /*
-    자바스크립트 객체I : object 타입
+    자바스크립트 객체I: object 타입
 
     1. 자바스크립트 객체는 object타입과 function 타입이 있다.
     2. 보통, function 타입의 객체는 '함수' 
