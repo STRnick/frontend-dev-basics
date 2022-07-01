@@ -29,3 +29,13 @@ console.log(index);
 
 var index = str7.indexOf("string4");    // 못찾으면 -1
 console.log(index); 
+
+var str8 = str7.substring(10, 13/* last index-1 */);
+console.log(str8);
+
+var a = str7.split(" ");
+console.log(a);
+
+var str9 = "abcdef";
+var a = str9.split(":");
+console.log(a);
