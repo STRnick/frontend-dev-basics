@@ -3,6 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+window.addEventListener("load", function(){
+	var imgElement = document.createElement("img");
+	
+	// setAttribute 사용
+	// 표준 Attribute => property	 (o)
+	imgElement.setAttribute("src", "https://mblogthumb-phinf.pstatic.net/MjAyMDA5MDhfMTAz/MDAxNTk5NTUxNTQ4MzQy.ntk_X9tz_9Qfi_PlhomWhEft8k8rDFYp8CnGSdHug34g.jq5Y9ihKuXw7LsiyriBJ_5c9pwEixfk4LVslfu8Z1oQg.JPEG.begofayo12/1599551548689.jpg?type=w800");
+	imgElement.setAttribute("style", "width: 200px");
+	imgElement.setAttribute("alt", '햄토리!');
+	
+	// --- 왜 property가 되지 않는지 조사 필요한 부분 ---
+	imgElement.setAttribute('data-no', 10); 
+	
+	// property => 표준 Attribute	 (o)
+	imgElement['title'] = '햄토리야~~';
+	
+	// property => 비표준 Attribute (x)
+	imgElement['no'] = 10;					// property
+	
+	setTimeout(function(){
+		document.body.appendChild(imgElement);
+		console.log(imgElement['no'], imgElement.getAttribute("no"));
+		console.log(imgElement.alt, imgElement['data-no'], imgElement.getAttribute("data-no"));
+	}, 2000);
+});
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
