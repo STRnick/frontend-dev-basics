@@ -8,24 +8,22 @@ window.addEventListener("load", function(){
 	var imgElement = document.createElement("img");
 	
 	// setAttribute 사용
-	// 표준 Attribute => property	 (o)
+	// (표준 attribute[prop(o)], 비표준 attribute[prop(x)]) 읽기/쓰기
+	// getAttribute/setAttribute를 사용한다.
 	imgElement.setAttribute("src", "https://mblogthumb-phinf.pstatic.net/MjAyMDA5MDhfMTAz/MDAxNTk5NTUxNTQ4MzQy.ntk_X9tz_9Qfi_PlhomWhEft8k8rDFYp8CnGSdHug34g.jq5Y9ihKuXw7LsiyriBJ_5c9pwEixfk4LVslfu8Z1oQg.JPEG.begofayo12/1599551548689.jpg?type=w800");
 	imgElement.setAttribute("style", "width: 200px");
 	imgElement.setAttribute("alt", '햄토리!');
+	imgElement.setAttribute('no1', 10); // 비표준 속성은 사용할 때 prefix 'data-'를 달아 'data-no1'으로 사용한다.
 	
-	// --- 왜 property가 되지 않는지 조사 필요한 부분 ---
-	imgElement.setAttribute('data-no', 10); 
+	imgElement['no2'] = 10; // 비표준 속성은 사용할 때 prefix 'data-'를 달아 'data-no2'로 사용한다.
+	imgElement['title'] = "햄토리야~~";
 	
-	// property => 표준 Attribute	 (o)
-	imgElement['title'] = '햄토리야~~';
-	
-	// property => 비표준 Attribute (x)
-	imgElement['no'] = 10;					// property
+	imgElement['data-no3'] = 10;
 	
 	setTimeout(function(){
 		document.body.appendChild(imgElement);
-		console.log(imgElement['no'], imgElement.getAttribute("no"));
-		console.log(imgElement.alt, imgElement['data-no'], imgElement.getAttribute("data-no"));
+		console.log(imgElement.alt, imgElement.no1);
+		console.log(imgElement.getAttribute("no2"), imgElement.getAttribute("title"));
 	}, 2000);
 });
 </script>
