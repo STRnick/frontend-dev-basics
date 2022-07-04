@@ -10,9 +10,9 @@
 - Asynchronous Programming
 
 ### 6. ch06: Browser Programming
---- DOM		   		 ┐						       
---- BOM		    	 ├─> API (Native Programming, Pure js, Vanilla js) 
---- XmlHttpRequest   ┘	
+--- DOM	
+--- BOM 
+--- XmlHttpRequest 
 
 ### 7. ch07: Browser Programming with jQuery
 ### 8. ch08: AJAX with jQuery
