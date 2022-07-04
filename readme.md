@@ -11,7 +11,7 @@
 
 ### 6. ch06: Browser Programming
 --- DOM		   		 ┐						       
---- BOM		    	 ├─> API (Native Programming, Pure js, Vanilla js)
+--- BOM		    	 ├─> API (Native Programming, Pure js, Vanilla js) 
 --- XmlHttpRequest   ┘	
 
 ### 7. ch07: Browser Programming with jQuery
