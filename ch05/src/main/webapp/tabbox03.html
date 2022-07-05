@@ -5,9 +5,18 @@
 <title>리스트를 이용한 메뉴 만들기</title>
 <link rel="stylesheet" type="text/css" href="tabbox.css"></link>
 <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
-<script src="tabbox03.js"></script>
+<!-- <script src="tabbox03.js"></script> -->
 <script>
 // tabBox.init();
+// 강사님 방식
+$(function(){
+	$(".tab-box ul li").click(function(){
+		$(".tab-box ul li.selected").removeClass("selected");
+		$(this).addClass("selected");
+	});
+});
+
+// 내 방식
 $(function(){
 	$("ul li")
 	.click(function(){
