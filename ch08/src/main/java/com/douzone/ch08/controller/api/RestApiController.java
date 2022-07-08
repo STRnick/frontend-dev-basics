@@ -1,4 +1,4 @@
-package com.douzone.ch08.controller.test.api;
+package com.douzone.ch08.controller.api;
 
 import java.util.ArrayList;
 import java.util.List;

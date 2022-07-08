@@ -1,4 +1,4 @@
-package com.douzone.ch08.controller.test.api;
+package com.douzone.ch08.controller.api;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
