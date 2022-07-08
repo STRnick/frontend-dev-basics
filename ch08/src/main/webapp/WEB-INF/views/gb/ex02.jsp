@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="${pageContext.request.contextPath }/jquery/jquery-3.6.0.js"></script>
 <script>
-var render = function(vo) {
+var render = function(vo, mode) {
 	var htmls = 
 		"<li data-no=''>" +
 		"<strong>" + vo.name + "</strong>" +
@@ -17,7 +17,50 @@ var render = function(vo) {
 		"<strong></strong>" +
 		"<a href='' data-no='" + vo.no + "'>삭제</a>" +
 		"</li>";
-	$("#list-guestbook").prepend(htmls);
+	
+	$("#list-guestbook")[mode ? "append" : "prepend"](htmls);
+}
+
+var fetch = function(){
+	$.ajax({
+		url: "/ch08/api/guestbook",
+		type: "get",
+		dataType: "json",
+		success: function(response){
+			if(response.result !== 'success'){
+				console.error(response.message);
+				return;
+			}
+			response.data.forEach(function(vo) {
+				render(vo, true);
+			});
+		}
+	});
+}
+
+$(function(){
+	$.ajax({
+		url: "/ch08/api/guestbook?no=3",
+		type: "get",
+		dataType: "json",
+		success: function(response){
+			if(response.result !== 'success'){
+				console.error(response.message);
+				return;
+			}
+			response.data.forEach(function(vo) {
+				render(vo, true);
+			});
+		}
+	});
+});
+
+$(function(){
+	// ...
+	// ...
+	// ...
+	
+	fetch();
 }
 
 $(function(){
@@ -63,40 +106,7 @@ $(function(){
 			<textarea id="tx-content" placeholder="내용을 입력해 주세요."></textarea>
 			<input type="submit" value="보내기" />
 		</form>
-		<ul id="list-guestbook">
-
-			<li data-no=''>
-				<strong>지나가다가</strong>
-				<p>
-					별루입니다.<br>
-					비번:1234 -,.-
-				</p>
-				<strong></strong>
-				<a href='' data-no=''>삭제</a> 
-			</li>
-			
-			<li data-no=''>
-				<strong>둘리</strong>
-				<p>
-					안녕하세요<br>
-					홈페이지가 개 굿 입니다.
-				</p>
-				<strong></strong>
-				<a href='' data-no=''>삭제</a> 
-			</li>
-
-			<li data-no=''>
-				<strong>주인</strong>
-				<p>
-					아작스 방명록 입니다.<br>
-					테스트~
-				</p>
-				<strong></strong>
-				<a href='' data-no=''>삭제</a> 
-			</li>
-			
-							
-		</ul>
+		<ul id="list-guestbook"></ul>
 	</div>
 </body>
 </html>
