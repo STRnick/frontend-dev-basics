@@ -1,6 +1,8 @@
-var App = function() {
+/* app module */
+
+module.exports = function() {
     var app = {};
-    app.textContents = "Hello world";
+    app.textContent = "Hello World";
 
     return app;
 }

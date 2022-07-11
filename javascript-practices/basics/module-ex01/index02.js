@@ -1,3 +1,3 @@
-/*  모듈을 사용하는 app */
-var App = reqire('./app');
+/* 모듈을 사용하는 app */
+var App = require('./app');
 console.log(App());

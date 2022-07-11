@@ -1,10 +1,10 @@
-/*
-    분리되어 있지 않은 App
-*/
+/**
+ * 분리되어 있지 않은 App
+ */
 
-var App = function() {
+ var App = function() {
     var app = {};
-    app.textContents = "Hello world";
+    app.textContent = "Hello World";
 
     return app;
 }
